@@ -1,0 +1,20 @@
+{
+  "name": "searcherries",
+  "interface": {
+    "displayName": "Searcherries"
+  },
+  "plugins": [
+    {
+      "name": "searcherries",
+      "source": {
+        "source": "local",
+        "path": "./plugins/searcherries"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Data & Analytics"
+    }
+  ]
+}
