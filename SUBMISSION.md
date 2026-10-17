@@ -4,7 +4,7 @@ What was built on 2026-10-17, what was verified, and what remains to be done by 
 
 ## State of this repository
 
-- Local git repository only. No GitHub remote exists yet; nothing has been pushed.
+- Published at https://github.com/eduardmur/searcherries-codex-plugin on 2026-10-17 (default branch `master`). The GitHub shorthand was verified the same day with Codex CLI 0.163.0: `codex plugin marketplace add eduardmur/searcherries-codex-plugin` cloned it into `~/.codex/.tmp/marketplaces/searcherries`, `codex plugin add searcherries@searcherries` installed 1.0.0, and `codex mcp list` shows the server as enabled, not logged in.
 - Verified with Codex CLI 0.163.0 (installed with `npm i -g @openai/codex`; the ChatGPT desktop app also bundles a CLI at `/Applications/ChatGPT.app/Contents/Resources/codex-cli/bin/codex`, 0.162.0-alpha.17.2, with the same plugin commands):
   - `codex plugin marketplace add ./searcherries-codex-plugin` registers the marketplace `searcherries` (name taken from `.agents/plugins/marketplace.json`).
   - `codex plugin list --available --json` lists `searcherries@searcherries` 1.0.0 with `installPolicy: AVAILABLE`, `authPolicy: ON_INSTALL`.
@@ -12,10 +12,10 @@ What was built on 2026-10-17, what was verified, and what remains to be done by 
   - `codex mcp list` shows `searcherries https://app.searcherries.com/mcp/searcherries enabled Not logged in`, so the CLI recognises the bundled server as OAuth-protected without any `extensions.com.openai.auth` block in `mcp.json`.
   - In a Codex session, `/mcp` prints `searcherries: authentication required (0 tools)` and the startup warning reads "The searcherries MCP server is not logged in. Run `codex mcp login searcherries`." The `$` picker lists the skills as `action-plan (searcherries)`, `question-review (searcherries)` and so on.
 - The Git route was verified without GitHub: the committed repository was served by a local HTTP Git server and `codex plugin marketplace add http://127.0.0.1:8765/searcherries-codex-plugin.git` cloned it into `~/.codex/.tmp/marketplaces/searcherries`, read `.agents/plugins/marketplace.json` there, installed `searcherries@searcherries` from the clone and answered `codex plugin marketplace upgrade searcherries`. `file://` URLs are rejected ("expected owner/repo, a git URL, or a local marketplace path").
-- Not verified: the OAuth sign-in (`codex mcp login searcherries`) and tool calls after it, which need the account owner; the GitHub shorthand itself (`codex plugin marketplace add eduardmur/searcherries-codex-plugin`), which needs the public repository; the Plugins Directory of the ChatGPT desktop app, which does not read CLI marketplaces.
-- The marketplace is still registered on this Mac from the local path. Before adding the GitHub one, remove it: `codex plugin remove searcherries@searcherries && codex plugin marketplace remove searcherries`.
+- Not verified: the OAuth sign-in (`codex mcp login searcherries`) and tool calls after it, which need the account owner; the Plugins Directory of the ChatGPT desktop app, which does not read CLI marketplaces.
+- On this Mac the marketplace is now registered from GitHub (the local-path registration was removed on 2026-10-17).
 
-## 1. Create the public repository and push
+## 1. Create the public repository and push (done 2026-10-17)
 
 ```sh
 cd ~/Projects/searcherries-codex-plugin
@@ -42,7 +42,7 @@ Codex CLI 0.163 exposes the public Plugins Directory as a built-in remote market
 
 This corrects the earlier conclusion that the CLI cannot install a directory plugin. Caveats before advertising it: the marketplace name `openai-curated-remote` is not documented anywhere public, and the help page says some directory plugins are unavailable when Codex is signed in with an API key. This repository stays useful either way: it adds the seven workflow skills the directory package does not contain, and it does not depend on an undocumented name.
 
-## 3. Follow-up in app.searcherries.com (not done here)
+## 3. Follow-up in app.searcherries.com (done 2026-10-17 on `/mcp#codex` and in the docs of both repositories)
 
 Add the marketplace route next to the existing `codex mcp add` commands:
 
