@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "searcherries",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "All your GEO and SEO data for AI agents in one read-only connection: AI visibility, Google Search Console, Bing Webmaster Tools and GA4, plus a skill that turns the findings into page changes.",
   "author": {
     "name": "Searcherries",
@@ -25,7 +25,7 @@
   "extensions": {
     "com.openai": {
       "interface": {
-        "displayName": "Searcherries",
+        "displayName": "Searcherries: AI SEO",
         "shortDescription": "AI Visibility & SEO",
         "longDescription": "Searcherries gives your AI agent all the data it needs for GEO and SEO in one connection: how AI assistants answer your customers' questions about your market, plus your Google Search Console, Bing Webmaster Tools and GA4 data.\n\nConnect Searcherries once and ask in plain language. The agent can build a prioritized action plan, find the questions where AI answers leave your brand out and see which competitors and sources they rely on instead, spot the pages and search queries with the most growth potential, and check how much traffic AI assistants send to your site and where it lands. When the agent can work with your website's code, the included skill turns these findings into concrete page changes and edits the files once you approve them.\n\nBuilt for founders, marketers and SEO specialists who want their site recommended in AI answers and found in search.\n\nLimitations: you need a Searcherries account with at least one project, and Search Console, Bing Webmaster Tools and GA4 data appear only for the sources you connect in Searcherries. Access is read-only: the plugin cannot change projects, questions or settings, and it returns the results of Searcherries' scheduled checks rather than running new ones. It only sees the projects of the account you authorize.",
         "developerName": "Searcherries",
