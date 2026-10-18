@@ -40,7 +40,7 @@ Every workflow reads data through the MCP server only. Nothing in this plugin ru
 
 ## Requirements
 
-A Searcherries account on a paid plan (an active trial counts) with at least one project. [Start here](https://app.searcherries.com/register). Codex CLI 0.163 or newer; the install was verified with 0.163.0 on 2026-10-17.
+A Searcherries account with at least one project. The free plan includes the Google Search Console and GA4 data you connect, so connect at least one of them, or there is nothing to read. AI visibility tracking (how AI assistants answer your customers' questions, which competitors and sources they name) and Bing Webmaster Tools need a paid plan, Starter or Pro (an active trial counts); on the free plan the action-plan workflow and questions about search and traffic still work. [Compare plans](https://searcherries.com/pricing) or [start here](https://app.searcherries.com/register). Codex CLI 0.163 or newer; the install was verified with 0.163.0 on 2026-10-17.
 
 ## Try it
 
